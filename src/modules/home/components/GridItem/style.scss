@@ -1,0 +1,69 @@
+@import "../../../../styles/variable";
+@import "../../../../styles/helpers";
+
+.grid-item {
+  display: flex;
+  padding: 8px 10px 10px;
+  background-color: var(--grid-item-bg);
+  border-bottom: 2px solid var(--grid-item-border-gap);
+
+  &-title {
+    margin: 20px 0 10px;
+    color: var(--grid-item-title);
+    font-weight: bold;
+  }
+
+  &-top {
+    flex: 0 0 40%;
+    width: 40%;
+  }
+
+  &-bottom {
+    flex: 0 0 59%;
+    width: 59%;
+    margin-left: 10px;
+  }
+
+  &-desc {
+    max-height: 200px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  &-date-time {
+    color: var(--grid-item-date-time);
+    font-size: 10px
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+@media (min-width: $laptop-screen) {
+  .grid-item {
+    flex-direction: column;
+    padding: 20px 10px 15px;
+    border: 1px solid var(--grid-item-border);
+
+    &-title {
+      margin: 0 0 20px;
+      color: #69a195;
+      font-weight: bold;
+    }
+
+    &-top,
+    &-bottom {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    &-top {
+      margin-bottom: 10px;
+    }
+
+    &-bottom {
+      margin: 0;
+    }
+  }
+}

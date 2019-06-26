@@ -1,0 +1,110 @@
+@import "../../../../styles/variable";
+
+.navigation {
+  margin-left: 20px;
+  background-color: var(--header-bg);
+
+  &-burger {
+    display: inline-block;
+    width: 20px;
+    line-height: 1px;
+
+    .line {
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+  }
+
+  &.active {
+
+    .navigation-menu {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &-menu {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    background-color: var(--header-bg);
+    z-index: 10;
+
+    li {
+      text-align: center;
+    }
+  }
+
+  &-menu-item {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 15px;
+    color: var(--header-font-color);
+    font-size: 15px;
+    text-transform: capitalize;
+    text-align: center;
+    cursor: pointer;
+    
+    &:hover,
+    &:active {
+      background-color: rgba(var(--navigation-item-active-rgb), 0.2);
+    }
+
+    &.active {
+      background-color: rgba(var(--navigation-item-active-rgb), 0.2);
+    }
+  }
+
+  .input-holder {
+    display: none;
+    margin: 0 10px;
+  }
+}
+
+@media (min-width: $laptop-screen) {
+  .navigation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-right: 0;
+
+    &-burger {
+      display: none;
+    }
+
+    &.active {
+
+      .navigation-menu {
+        flex-direction: row;
+      }
+    }
+
+    &-menu {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      height: 100%;
+    }
+
+    &-menu-item {
+      height: 50px;
+      padding-left: 30px;
+      padding-right: 30px;
+      line-height: 30px;
+    }
+
+    .input-holder {
+      display: block;
+    }
+  }
+}

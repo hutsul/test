@@ -1,0 +1,63 @@
+@import "../../../styles/variable";
+
+.main-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 25px 20px 25px 36px;
+  background-color: var(--footer-bg);
+
+  .navigation-menu {
+    width: auto;
+    background-color: transparent;
+
+    &-item {
+      position: relative;
+      height: auto;
+      padding: 0 15px;
+      color: var(--footer-nav-item);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: inline-block;
+        content: ' ';
+        width: 1px;
+        height: 70%;
+        background-color: var(--footer-border);
+        transform: translate(0, -50%);
+      }
+    }
+
+    li {
+
+      &:last-of-type {
+
+        .navigation-menu-item {
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    color: var(--foter-copyright);
+  }
+}
+
+@media (min-width: $laptop-screen) {
+  .main-footer {
+    display: flex;
+  }
+}

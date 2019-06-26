@@ -1,0 +1,17 @@
+.hide-mobile {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+@media (min-width: $laptop-screen) {
+  .hide-mobile {
+    display: inherit;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+}
